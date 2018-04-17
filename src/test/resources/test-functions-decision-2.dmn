@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_12heylh" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decision2" name="Decision">
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Input with function" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="integer">        <text>func1(input1, input2)</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Output with function" name="output" typeRef="string" />
+      <rule id="row-78874892-7">
+        <inputEntry id="UnaryTests_0ifbg5n">        <text>func2(input2)</text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_04qe1vc">        <text>func3(input3)</text>
+</outputEntry>
+      </rule>
+      <rule id="row-78874892-11">
+        <inputEntry id="UnaryTests_13api04">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0s5qw3j">        <text><![CDATA["failed"]]></text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

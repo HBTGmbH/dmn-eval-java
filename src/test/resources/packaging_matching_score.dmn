@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="definitions_1gkqchx" name="definitions" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="decisionPackagingMatchingScore" name="Packaging Matching Score">
+    <extensionElements>
+      <biodi:bounds x="200" y="200" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable" hitPolicy="FIRST">
+      <input id="input1" label="Packaging of Purchase" camunda:inputVariable="">
+        <inputExpression id="inputExpression1" typeRef="string">        <text>purchaseLot.packaging</text>
+</inputExpression>
+      </input>
+      <input id="InputClause_0pox0wz" label="Packaging of Sale" camunda:inputVariable="">
+        <inputExpression id="LiteralExpression_1wzqri4" typeRef="string">        <text>salesLot.packaging</text>
+</inputExpression>
+      </input>
+      <output id="output1" label="Matching Score" name="matchingScore" typeRef="integer" />
+      <rule id="row-195137887-12">
+        <description>repackaging required</description>
+        <inputEntry id="UnaryTests_1tlqewb">        <text><![CDATA["Bulk", "Big Bags"]]></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_0ygm5lq">        <text><![CDATA["Bags"]]></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_0rb109c">        <text>0</text>
+</outputEntry>
+      </rule>
+      <rule id="row-195137887-13">
+        <description>all other cases are fine</description>
+        <inputEntry id="UnaryTests_0geqnav">        <text></text>
+</inputEntry>
+        <inputEntry id="UnaryTests_1nkfta0">        <text></text>
+</inputEntry>
+        <outputEntry id="LiteralExpression_1u58znu">        <text>30</text>
+</outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

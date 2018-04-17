@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE project>
+<Configuration status="warn">
+<Appenders>
+<Console name="Console" target="SYSTEM_OUT">
+<PatternLayout pattern="%5p %d{HH:mm:ss.SSS} (%F:%L) %m%n%xEx{full}" />
+</Console>
+</Appenders>
+<Loggers>
+<Root level="warn">
+<AppenderRef ref="Console" />
+</Root>
+<Logger name="de.hbt" level="info"/>
+</Loggers>
+</Configuration>
